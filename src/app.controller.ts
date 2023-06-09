@@ -1,12 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { Controller, Get, Inject, Query } from '@nestjs/common';
+import { GetPeopleService } from './service/people.service';
+import { PeopleEntity } from './enitity/people.entity';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    @Inject(GetPeopleService)
+    private readonly getPeopleService: GetPeopleService,
+  ) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/people')
+  public async searchLocation(
+    @Query('name') name: string,
+  ): Promise<PeopleEntity[]> {
+    console.log('controller')
+    return this.getPeopleService.GetPeople(name);
   }
 }

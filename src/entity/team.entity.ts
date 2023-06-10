@@ -1,13 +1,14 @@
 import { IEntity } from './entity.interface';
 
 export class TeamEntity implements IEntity {
-  id: number;
+  id: string;
   name: string;
   base: string;
   chassis: string;
   powerUnit: string;
   firstTeamEntry: number;
   worldChampionships: number;
+  yearOfAttendance: number;
 
   constructor(init?: Partial<TeamEntity>) {
     Object.assign(this, init);

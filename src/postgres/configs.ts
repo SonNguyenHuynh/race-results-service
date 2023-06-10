@@ -1,5 +1,4 @@
 import { DataSource, DataSourceOptions } from 'typeorm';
-import { PeopleSchema } from './schema/people.schema';
 
 export const dataSourceOptions: DataSourceOptions = {
   type: 'postgres',
@@ -8,7 +7,7 @@ export const dataSourceOptions: DataSourceOptions = {
   username: 'postgres',
   password: '123456',
   database: 'postgres',
-  entities: [PeopleSchema],
+  entities: [__dirname + '/schema/*{.ts,.js}'],
   migrations: [__dirname + '/migration/*{.ts,.js}'],
   synchronize: true,
 };

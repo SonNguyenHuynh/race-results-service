@@ -2,7 +2,7 @@ import { IEntity } from './entity.interface';
 import { RaceEntity } from './race.entity';
 
 export class RankEntity implements IEntity {
-  id: number;
+  id: string;
   raceId: string;
   teamId: string;
   rank: number;

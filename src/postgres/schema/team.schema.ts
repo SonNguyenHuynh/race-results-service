@@ -1,4 +1,4 @@
-import { TeamEntity } from 'src/enitity/team.entity';
+import { TeamEntity } from 'src/entity/team.entity';
 import { EntitySchema } from 'typeorm';
 
 export const TeamSchema = new EntitySchema<TeamEntity>({
@@ -46,9 +46,9 @@ export const TeamSchema = new EntitySchema<TeamEntity>({
       nullable: true,
       name: 'power_unit',
     },
-  },
-
-  orderBy: {
-    createdAt: 'ASC',
+    yearOfAttendance: {
+      type: Number,
+      name: 'year_of_attendance',
+    },
   },
 });

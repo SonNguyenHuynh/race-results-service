@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { PeopleEntity } from 'src/enitity/people.entity';
+import { PeopleEntity } from 'src/entity/people.entity';
 
 export const PeopleSchema = new EntitySchema<PeopleEntity>({
   name: 'PeopleEntity',
@@ -52,8 +52,9 @@ export const PeopleSchema = new EntitySchema<PeopleEntity>({
       nullable: false,
       name: 'points',
     },
-  },
-  orderBy: {
-    createdAt: 'ASC',
+    yearOfAttendance: {
+      type: Number,
+      name: 'year_of_attendance',
+    },
   },
 });

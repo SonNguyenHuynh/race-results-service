@@ -1,8 +1,6 @@
-import { Entity, PrimaryColumn } from 'typeorm';
 import { IEntity } from './entity.interface';
 
 export class PeopleEntity implements IEntity {
-  @PrimaryColumn()
   id: number;
   teamId: string;
   name: string;
@@ -11,6 +9,7 @@ export class PeopleEntity implements IEntity {
   points: number;
   country: string;
   jod: string;
+  yearOfAttendance: number;
 
   constructor(init?: Partial<PeopleEntity>) {
     Object.assign(this, init);

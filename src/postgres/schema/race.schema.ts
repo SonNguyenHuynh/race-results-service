@@ -1,5 +1,5 @@
 import { EntitySchema } from 'typeorm';
-import { RaceEntity } from 'src/enitity/race.entity';
+import { RaceEntity } from 'src/entity/race.entity';
 
 export const RaceSchema = new EntitySchema<RaceEntity>({
   name: 'RaceEntity',
@@ -18,19 +18,10 @@ export const RaceSchema = new EntitySchema<RaceEntity>({
       nullable: false,
       name: 'name',
     },
-    teamId: {
-      type: String,
-      length: 100,
-      nullable: false,
-      name: 'team_id',
-    },
     year: {
       type: Number,
       nullable: true,
       name: 'year',
     },
-  },
-  orderBy: {
-    createdAt: 'ASC',
   },
 });

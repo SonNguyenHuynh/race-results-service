@@ -1,7 +1,7 @@
 import { EntitySchema } from 'typeorm';
-import { RankEntity } from 'src/enitity/rank.entity';
+import { RankEntity } from 'src/entity/rank.entity';
 
-export const RaceSchema = new EntitySchema<RankEntity>({
+export const RankSchema = new EntitySchema<RankEntity>({
   name: 'RankEntity',
   tableName: 'RANK',
   target: RankEntity,
@@ -41,8 +41,5 @@ export const RaceSchema = new EntitySchema<RankEntity>({
       primary: true,
       type: 'many-to-one',
     },
-  },
-  orderBy: {
-    createdAt: 'ASC',
   },
 });

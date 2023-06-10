@@ -1,10 +1,9 @@
 import { IEntity } from './entity.interface';
 
 export class RaceEntity implements IEntity {
-  id: number;
+  id: string;
   name: string;
-  year: string;
-  teamId: string;
+  year: number;
 
   constructor(init?: Partial<RaceEntity>) {
     Object.assign(this, init);

@@ -1,6 +1,6 @@
-import { PeopleEntity } from 'src/enitity/people.entity';
+import { PeopleEntity } from 'src/entity/people.entity';
 
 export const PeopleRepositoryName = 'PeopleRepository.Interface';
 export interface PeopleRepository {
-  findByName(name: string): Promise<PeopleEntity[]>;
+  findByName(name: string, year: number): Promise<PeopleEntity[]>;
 }

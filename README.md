@@ -26,11 +26,47 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Download
+
+-- nodejs version: 16.x
+-- docker desktop: (https://docs.docker.com/desktop/install/windows-install/)
+-- pgAdmin : (https://www.pgadmin.org/download/)
+
 ## Installation
 
 ```bash
 $ npm install
+
 ```
+
+start docker
+
+```bash
+$ docker-compose up -d
+
+```
+
+run migration
+
+```bash
+$ npm run migration:run
+
+```
+
+connect DB
+
+```bash
+$  host: 'localhost',
+$  port: 5434,
+$  username: 'postgres',
+$  password: '123456',
+$  database: 'postgres',
+
+```
+
+insert DB : import file sql in folder source into db
+
+(data.sql)
 
 ## Running the app
 
@@ -38,36 +74,65 @@ $ npm install
 # development
 $ npm run start
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
-## Test
+## Test api
+
+api
+http://localhost:3000/people
+http://localhost:3000/race
+http://localhost:3000/rank
+http://localhost:3000/team
+
+get all people(driver)
 
 ```bash
-# unit tests
-$ npm run test
+$ http://localhost:3000/people
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
 ```
 
-## Support
+get people by Name
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+$ http://localhost:3000/people?name=Max Verstappen
 
-## Stay in touch
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+get people by year
 
-## License
+```bash
+$ http://localhost:3000/people?year=2023
 
-Nest is [MIT licensed](LICENSE).
+```
+
+get people by name and year
+
+```bash
+$ http://localhost:3000/people?name=Max Verstappen&year=2023
+
+```
+
+get team by Name
+
+```bash
+$ http://localhost:3000/team?name=RED BULL RACING HONDA RBPT
+
+```
+
+get team by year
+
+```bash
+$ http://localhost:3000/team?year=2023
+
+```
+
+get team by year and race name
+
+```bash
+$ http://localhost:3000/rank?name=BAHRAIN&year=2023
+```
+
+other api follow as above
+
+good luck
+

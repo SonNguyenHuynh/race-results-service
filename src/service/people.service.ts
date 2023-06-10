@@ -1,20 +1,18 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { PeopleEntity } from 'src/enitity/people.entity';
+import { PeopleEntity } from 'src/entity/people.entity';
 import {
   PeopleRepository,
   PeopleRepositoryName,
 } from 'src/repo/interface/people.interface';
 
 @Injectable()
-export class GetPeopleService {
+export class PeopleService {
   constructor(
     @Inject(PeopleRepositoryName)
-    private readonly peopleRepo: PeopleRepository,
+    private readonly repo: PeopleRepository,
   ) {}
-  GetPeople(name: string): Promise<PeopleEntity[]> {
-    console.log('')
-    const A = this.peopleRepo.findByName(name);
-    console.log(A);
-    return A;
+
+  public async getPeople(name: string, year: number): Promise<PeopleEntity[]> {
+    return this.repo.findByName(name, year);
   }
 }
